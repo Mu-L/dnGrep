@@ -787,7 +787,7 @@
     <comment>Options dialog, search options label</comment>
   </data>
   <data name="Options_OnFileMoveOverwrite" xml:space="preserve">
-    <value>Lors du déplacement d'un fichier, si le fichier de destination existe, remplacer le fichier existant ?</value>
+    <value>Si le fichier de destination existe lors d'un remplacement, le remplacer ?</value>
     <comment>Options dialog, overwrite on move options label</comment>
   </data>
   <data name="Options_OpenTheWholeArchiveForTheseExtensions" xml:space="preserve">
@@ -803,7 +803,7 @@
     <comment>Options dialog, layout radio group label</comment>
   </data>
   <data name="Options_PDFNumberStyle" xml:space="preserve">
-    <value>Style de numérotation PDF :</value>
+    <value>Style de numérotation PDF :</value>
     <comment>Options dialog, PDF numbering options label</comment>
   </data>
   <data name="Options_PlugInCache" xml:space="preserve">
@@ -2803,16 +2803,16 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Historiques</value>
   </data>
   <data name="Options_InOptionsExpander" xml:space="preserve">
-    <value>dans l'expandeur d'options</value>
+    <value>dans la fenêtre rétractable des options</value>
   </data>
   <data name="Options_ItemsShownInFileFilterHistoryLists" xml:space="preserve">
-    <value>éléments affichés dans les listes historiques de filtres de fichiers</value>
+    <value>éléments affichés dans l'historique des filtres de fichiers</value>
   </data>
   <data name="Options_ItemsShownInPathHistoryList" xml:space="preserve">
-    <value>éléments affichés dans la liste de l'historique des chemins</value>
+    <value>éléments affichés dans l'historique des chemins</value>
   </data>
   <data name="Options_ItemsShownInSearchAndReplaceHistoryLists" xml:space="preserve">
-    <value>éléments affichés dans les listes d'historique de recherche et de remplacement</value>
+    <value>éléments affichés dans les historiques de recherche et remplacement</value>
   </data>
   <data name="Options_Language" xml:space="preserve">
     <value>Langue</value>
@@ -2824,28 +2824,28 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Numéros de ligne</value>
   </data>
   <data name="Options_LoadFromFile" xml:space="preserve">
-    <value>Charger à partir du fichier…</value>
+    <value>Charger à partir d'un fichier…</value>
   </data>
   <data name="Options_MainFontSize" xml:space="preserve">
-    <value>Taille de la police de la fenêtre principale</value>
+    <value>Taille de police de la fenêtre principale</value>
   </data>
   <data name="Options_MatchEverythingToExactMatch" xml:space="preserve">
-    <value>0 - tout correspond ; 1.0 - correspondance exacte</value>
+    <value>0 - toute correspondance ; 1.0 - correspondance exacte</value>
   </data>
   <data name="Options_MatchThreshold" xml:space="preserve">
-    <value>Seuil de correspondance (de 0 à 1.0)</value>
+    <value>Niveau de correspondance (de 0 à 1.0)</value>
   </data>
   <data name="Options_MatchTimeout" xml:space="preserve">
-    <value>Temporisation de correspondance</value>
+    <value>Temps imparti</value>
   </data>
   <data name="Options_MaximizeResultsPanelOnSearch" xml:space="preserve">
-    <value>Maximiser le panneau des résultats de la recherche</value>
+    <value>Agrandir le panneau des résultats de la recherche</value>
   </data>
   <data name="Options_MoveFiles" xml:space="preserve">
     <value>Déplacer les fichiers</value>
   </data>
   <data name="Options_OnFileCopyOverwrite" xml:space="preserve">
-    <value>Durant la copie du fichier, lorsque le fichier existe deja, écraser le fichier existant ?</value>
+    <value>Lorsqu'un fichier existe déjà lors de la copie, le remplacer ?</value>
   </data>
   <data name="Options_OnMainPanel" xml:space="preserve">
     <value>sur le panneau principal</value>
@@ -2857,7 +2857,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Numéros de page</value>
   </data>
   <data name="Options_PDFToText" xml:space="preserve">
-    <value>PDF en texte</value>
+    <value>PDF vers texte</value>
   </data>
   <data name="Options_PdfToTextExeCommandLineOptions" xml:space="preserve">
     <value>Options de la ligne de commande de PdfToText.exe :</value>
@@ -2872,13 +2872,13 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Filtre de fichier</value>
   </data>
   <data name="Options_Personalize_PreviewWindow" xml:space="preserve">
-    <value>Fenêtre de prévisualisation</value>
+    <value>Fenêtre d'aperçu</value>
   </data>
   <data name="Options_Personalize_ResultOptions" xml:space="preserve">
     <value>Options des résultats</value>
   </data>
   <data name="Options_Personalize_ResultsTree" xml:space="preserve">
-    <value>Arbre de résultats</value>
+    <value>Arborescence des résultats</value>
   </data>
   <data name="Options_Personalize_SearchOptions" xml:space="preserve">
     <value>Options de recherche</value>
@@ -2887,13 +2887,13 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Type de recherche</value>
   </data>
   <data name="Options_Personalize_SpecialOptions" xml:space="preserve">
-    <value>Options spéciales</value>
+    <value>Options spécifiques</value>
   </data>
   <data name="Options_PersonalizeControlVisibility" xml:space="preserve">
     <value>Personnaliser la visibilité des commandes</value>
   </data>
   <data name="Options_PersonalizeControlVisibility_Tooltip" xml:space="preserve">
-    <value>Afficher ou masquer les contrôles lorsque la fonction Personnaliser est activée</value>
+    <value>Afficher ou masquer les réglages lorsque “Personnaliser” est activé</value>
   </data>
   <data name="Options_PluginEnabled" xml:space="preserve">
     <value>Activé</value>
