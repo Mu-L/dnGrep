@@ -2830,7 +2830,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Taille de police de la fenêtre principale</value>
   </data>
   <data name="Options_MatchEverythingToExactMatch" xml:space="preserve">
-    <value>0 - toute correspondance ; 1.0 - correspondance exacte</value>
+    <value>0 - toute correspondance ; 1,0 - correspondance exacte</value>
   </data>
   <data name="Options_MatchThreshold" xml:space="preserve">
     <value>Niveau de correspondance (de 0 à 1,0)</value>
@@ -2959,7 +2959,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Afficher dnGrep dans le menu contextuel de l'explorateur Windows</value>
   </data>
   <data name="Options_ShowFileInfoToolTips" xml:space="preserve">
-    <value>Afficher les info-bulles sur les propriétés des fichiers</value>
+    <value>Afficher les info-bulles des propriétés de fichiers</value>
   </data>
   <data name="Options_ShowFilePathInResultsPanel" xml:space="preserve">
     <value>Afficher le chemin du fichier dans le panneau des résultats</value>
@@ -3004,10 +3004,10 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Modifie le niveau du zoom de l'éditeur de texte</value>
   </data>
   <data name="Preview_FindNext" xml:space="preserve">
-    <value>Recherche suivante (F3)</value>
+    <value>Occurence suivante (F3)</value>
   </data>
   <data name="Preview_FindPrevious" xml:space="preserve">
-    <value>Recherche précédente (Shift+F3)</value>
+    <value>Occurrence précédente (Shift+F3)</value>
   </data>
   <data name="Preview_HighlightsDisabledTooManyMatchesFound" xml:space="preserve">
     <value>Les surbrillances ne sont pas affichées car trop d'occurrences ont été trouvées.</value>
