@@ -691,7 +691,7 @@
     <comment>Options dialog, check box label</comment>
   </data>
   <data name="Options_Find" xml:space="preserve">
-    <value>Trouver :</value>
+    <value>Rechercher :</value>
     <comment>Options dialog, search box label</comment>
   </data>
   <data name="Options_FocusSearchFor" xml:space="preserve">
@@ -1481,7 +1481,7 @@
     <value>Description :</value>
   </data>
   <data name="BookmarkDetails_DotAsNewline" xml:space="preserve">
-    <value>Point comme saut de ligne</value>
+    <value>Point pour saut de ligne</value>
   </data>
   <data name="BookmarkDetails_Encoding" xml:space="preserve">
     <value>Encodage :</value>
@@ -1535,10 +1535,10 @@
     <value>Masques d'exclusion :</value>
   </data>
   <data name="BookmarkDetails_PatternsToMatch" xml:space="preserve">
-    <value>Masques de correspondance :</value>
+    <value>Masques d'inclusion :</value>
   </data>
   <data name="BookmarkDetails_PatternType_AsteriskPattern" xml:space="preserve">
-    <value>Caractère générique</value>
+    <value>Caractères génériques</value>
   </data>
   <data name="BookmarkDetails_PatternType_Everything" xml:space="preserve">
     <value>Everything</value>
@@ -1556,7 +1556,7 @@
     <value>Re_chercher dans les archives</value>
   </data>
   <data name="BookmarkDetails_SearchType_Hex" xml:space="preserve">
-    <value>Octet</value>
+    <value>Octale</value>
   </data>
   <data name="BookmarkDetails_SearchType_PlainTextSearch" xml:space="preserve">
     <value>Recherche en texte brut</value>
@@ -1894,7 +1894,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>_Annuler</value>
   </data>
   <data name="Main_CaptureGroupSearch" xml:space="preserve">
-    <value>Recherche de groupe de capture</value>
+    <value>Groupes de capture</value>
   </data>
   <data name="Main_CaseSensitive" xml:space="preserve">
     <value>Respecter la c_asse</value>
@@ -1924,16 +1924,16 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Création</value>
   </data>
   <data name="Main_DateFrom" xml:space="preserve">
-    <value>De</value>
+    <value>Du</value>
   </data>
   <data name="Main_DatePast" xml:space="preserve">
-    <value>Entre</value>
+    <value>Dans les</value>
   </data>
   <data name="Main_DatePastHours" xml:space="preserve">
     <value>heures</value>
   </data>
   <data name="Main_DateTo" xml:space="preserve">
-    <value>et</value>
+    <value>à</value>
   </data>
   <data name="Main_DnGREP_Title" xml:space="preserve">
     <value>dnGrep</value>
@@ -1945,7 +1945,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Ancrer à droite</value>
   </data>
   <data name="Main_DotAsNewline" xml:space="preserve">
-    <value>_Point comme saut de ligne</value>
+    <value>_Point pour saut de ligne</value>
   </data>
   <data name="Main_Empty" xml:space="preserve">
     <value>Vide</value>
@@ -2128,7 +2128,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>…</value>
   </data>
   <data name="Main_PastDateTo" xml:space="preserve">
-    <value>et</value>
+    <value>au</value>
   </data>
   <data name="Main_PatternsToExclude" xml:space="preserve">
     <value>Masques d'exclusion :</value>
@@ -2137,7 +2137,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Masques d'inclusion :</value>
   </data>
   <data name="Main_PatternType_Asterisk" xml:space="preserve">
-    <value>Caractère générique</value>
+    <value>Caractères génériques</value>
   </data>
   <data name="Main_PatternType_Everything" xml:space="preserve">
     <value>Everything</value>
@@ -2311,7 +2311,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Recherche para_llèle</value>
   </data>
   <data name="Main_SearchType_Hex" xml:space="preserve">
-    <value>Octet</value>
+    <value>Octale</value>
   </data>
   <data name="Main_SearchType_PlainTextSearch" xml:space="preserve">
     <value>Recherche de texte brut</value>
@@ -2422,7 +2422,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Nombre de d'occurrences sur la ligne</value>
   </data>
   <data name="Main_StopAfterFirstMatch" xml:space="preserve">
-    <value>Arrêt après la première occurrence</value>
+    <value>Arrêter après la première occurrence</value>
   </data>
   <data name="Main_TestExpression" xml:space="preserve">
     <value>Tester l'expression</value>
@@ -3004,10 +3004,10 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Modifie le niveau du zoom de l'éditeur de texte</value>
   </data>
   <data name="Preview_FindNext" xml:space="preserve">
-    <value>Trouver le suivant (F3)</value>
+    <value>Recherche suivante (F3)</value>
   </data>
   <data name="Preview_FindPrevious" xml:space="preserve">
-    <value>Trouver le précédent (Shift+F3)</value>
+    <value>Recherche précédente (Shift+F3)</value>
   </data>
   <data name="Preview_HighlightsDisabledTooManyMatchesFound" xml:space="preserve">
     <value>Les surbrillances ne sont pas affichées car trop d'occurrences ont été trouvées.</value>
@@ -3265,7 +3265,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Respecter la casse</value>
   </data>
   <data name="ReportSummary_DotAsNewline" xml:space="preserve">
-    <value>Point comme saut de ligne</value>
+    <value>Point pour saut de ligne</value>
   </data>
   <data name="ReportSummary_Encoding" xml:space="preserve">
     <value>Encodage :</value>
@@ -3466,13 +3466,13 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Opérateurs booléens</value>
   </data>
   <data name="ScriptHint_set_capturegroupsearch" xml:space="preserve">
-    <value>Recherche de groupe de capture</value>
+    <value>Rechercher les groupes de capture</value>
   </data>
   <data name="ScriptHint_set_casesensitive" xml:space="preserve">
     <value>Respecter la casse</value>
   </data>
   <data name="ScriptHint_set_dotasnewline" xml:space="preserve">
-    <value>Point comme saut de ligne</value>
+    <value>Point pour saut de ligne</value>
   </data>
   <data name="ScriptHint_set_followsymlinks" xml:space="preserve">
     <value>Suivre les liens symboliques</value>
@@ -3556,7 +3556,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Copier dans le presse-papiers</value>
   </data>
   <data name="Test_DotAsNewline" xml:space="preserve">
-    <value>_Point comme saut de ligne</value>
+    <value>_Point pour saut de ligne</value>
   </data>
   <data name="Test_HighlightGroups" xml:space="preserve">
     <value>Surligner les groupes</value>
@@ -3589,7 +3589,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Résultats de recherche :</value>
   </data>
   <data name="Test_SearchType_Hex" xml:space="preserve">
-    <value>Octet</value>
+    <value>Octale</value>
   </data>
   <data name="Test_SearchType_Regex" xml:space="preserve">
     <value>Expression _régulière</value>
