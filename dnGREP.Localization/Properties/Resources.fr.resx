@@ -2407,10 +2407,10 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>Recherche terminée en {0} - {1} occurrences trouvées dans {2} fichiers sur {3} recherchés.</value>
   </data>
   <data name="Main_Status_Searched0FilesFound1MatchingFiles" xml:space="preserve">
-    <value>{0} fichiers recherchés, {1} trouvés.</value>
+    <value>{0} fichiers analysés, {1} trouvés.</value>
   </data>
   <data name="Main_Status_Searched0FilesFound1MatchingFilesProcessing2" xml:space="preserve">
-    <value>{0} fichiers recherchés, {1} fichiers trouvés - {2} traités</value>
+    <value>{0} fichiers analysés, {1} fichiers trouvés - Traitement de {2}</value>
   </data>
   <data name="Main_Status_Searching" xml:space="preserve">
     <value>Recherche…</value>
