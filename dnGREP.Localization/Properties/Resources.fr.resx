@@ -2128,7 +2128,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>…</value>
   </data>
   <data name="Main_PastDateTo" xml:space="preserve">
-    <value>au</value>
+    <value>à</value>
   </data>
   <data name="Main_PatternsToExclude" xml:space="preserve">
     <value>Masques d'exclusion :</value>
