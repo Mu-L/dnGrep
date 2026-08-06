@@ -1933,7 +1933,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>heures</value>
   </data>
   <data name="Main_DateTo" xml:space="preserve">
-    <value>à</value>
+    <value>au</value>
   </data>
   <data name="Main_DnGREP_Title" xml:space="preserve">
     <value>dnGrep</value>
