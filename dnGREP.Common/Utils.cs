@@ -1587,11 +1587,7 @@ namespace dnGREP.Common
         /// <summary>
         /// Open file using either default editor or the one provided via customEditor parameter
         /// </summary>
-        /// <param name="fileName">File to open</param>
-        /// <param name="line">Line number</param>
-        /// <param name="useCustomEditor">True if customEditor parameter is provided</param>
-        /// <param name="customEditor">Custom editor path</param>
-        /// <param name="customEditorArgs">Arguments for custom editor</param>
+        /// <param name="args">Open file arguments</param>
         public static void OpenFile(OpenFileArgs args)
         {
             string filePath = args.SearchResult.FileNameDisplayed;
@@ -1602,121 +1598,159 @@ namespace dnGREP.Common
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                if (!args.UseCustomEditor || string.IsNullOrWhiteSpace(args.CustomEditorName))
+                if (args.UseCustomEditor && !string.IsNullOrWhiteSpace(args.CustomEditorName))
                 {
-                    try
-                    {
-                        ProcessStartInfo startInfo = new()
-                        {
-                            FileName = UiUtils.Quote(filePath),
-                            UseShellExecute = true,
-                        };
-                        try
-                        {
-                            using var proc = Process.Start(startInfo);
-                        }
-                        catch (Win32Exception ex)
-                        {
-                            if (ex.NativeErrorCode == ErrorRequiresElevation)
-                            {
-                                startInfo.Verb = "runas";
-                                startInfo.UseShellExecute = true;
+                    bool customEditorSucceeded = OpenFileInCustomEditor(args, filePath);
 
-                                using var proc = Process.Start(startInfo);
-                            }
-                            else
-                            {
-                                throw;
-                            }
-                        }
-                    }
-                    catch
+                    if (!customEditorSucceeded)
                     {
-                        ProcessStartInfo startInfo = new("notepad.exe")
-                        {
-                            UseShellExecute = false,
-                            CreateNoWindow = true,
-                            Arguments = filePath
-                        };
-                        try
-                        {
-                            using var proc = Process.Start(startInfo);
-                        }
-                        catch (Win32Exception ex)
-                        {
-                            if (ex.NativeErrorCode == ErrorRequiresElevation)
-                            {
-                                startInfo.Verb = "runas";
-                                startInfo.UseShellExecute = true;
-
-                                using var proc = Process.Start(startInfo);
-                            }
-                            else
-                            {
-                                throw;
-                            }
-                        }
+                        OpenFileInDefaultEditor(filePath);
                     }
                 }
                 else
                 {
-                    var editorList = GrepSettings.Instance.Get<List<CustomEditor>>(GrepSettings.Key.CustomEditors);
-                    CustomEditor? editor = null;
-                    if (args.CustomEditorName.Equals(OpenFileArgs.DefaultEditor, StringComparison.Ordinal))
+                    OpenFileInDefaultEditor(filePath);
+                }
+            }
+        }
+
+        private static void OpenFileInDefaultEditor(string filePath)
+        {
+            try
+            {
+                ProcessStartInfo startInfo = new()
+                {
+                    FileName = UiUtils.Quote(filePath),
+                    UseShellExecute = true,
+                };
+                try
+                {
+                    using var proc = Process.Start(startInfo);
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == ErrorRequiresElevation)
                     {
-                        string fileType = Path.GetExtension(filePath).TrimStart('.');
+                        startInfo.Verb = "runas";
+                        startInfo.UseShellExecute = true;
 
-                        editor = editorList.FirstOrDefault(r => r.ExtensionList
-                            .Contains(fileType, StringComparison.OrdinalIgnoreCase));
-
-                        if (editor == null)
-                        {
-                            editor = editorList.FirstOrDefault();
-                        }
+                        using var proc = Process.Start(startInfo);
                     }
                     else
                     {
-                        editor = editorList.FirstOrDefault(e => e.Label
-                            .Equals(args.CustomEditorName, StringComparison.OrdinalIgnoreCase));
+                        if (!IsBinary(filePath))
+                        {
+                            OpenFileInNotepad(filePath);
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
+                }
+            }
+            catch
+            {
+                if (!IsBinary(filePath))
+                {
+                    OpenFileInNotepad(filePath);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
 
-                    if (editor != null)
+        private static bool OpenFileInCustomEditor(OpenFileArgs args, string filePath)
+        {
+            var editorList = GrepSettings.Instance.Get<List<CustomEditor>>(GrepSettings.Key.CustomEditors);
+            CustomEditor? editor = null;
+            if (args.CustomEditorName.Equals(OpenFileArgs.DefaultEditor, StringComparison.Ordinal))
+            {
+                string fileType = Path.GetExtension(filePath).TrimStart('.');
+
+                editor = editorList.FirstOrDefault(r => r.ExtensionList
+                    .Contains(fileType, StringComparison.OrdinalIgnoreCase));
+
+                if (editor == null)
+                {
+                    editor = editorList.FirstOrDefault();
+                }
+            }
+            else
+            {
+                editor = editorList.FirstOrDefault(e => e.Label
+                    .Equals(args.CustomEditorName, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (editor != null)
+            {
+                int pageNumber = args.PageNumber > 0 ? args.PageNumber : 1;
+
+                bool escapeQuotes = editor.EscapeQuotes;
+                string matchValue = escapeQuotes ? EscapeQuotes(args.FirstMatch) : args.FirstMatch;
+
+                ProcessStartInfo startInfo = new(editor.Path)
+                {
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    Arguments = editor.Args.Replace("%file", UiUtils.Quote(filePath), StringComparison.Ordinal)
+                        .Replace("%page", pageNumber.ToString(), StringComparison.Ordinal)
+                        .Replace("%line", args.LineNumber.ToString(), StringComparison.Ordinal)
+                        .Replace("%pattern", args.Pattern, StringComparison.Ordinal)
+                        .Replace("%match", matchValue, StringComparison.Ordinal)
+                        .Replace("%column", args.ColumnNumber.ToString(), StringComparison.Ordinal),
+                };
+                try
+                {
+                    using var proc = Process.Start(startInfo);
+                    return true;
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == ErrorRequiresElevation)
                     {
-                        int pageNumber = args.PageNumber > 0 ? args.PageNumber : 1;
+                        startInfo.Verb = "runas";
+                        startInfo.UseShellExecute = true;
 
-                        bool escapeQuotes = editor.EscapeQuotes;
-                        string matchValue = escapeQuotes ? EscapeQuotes(args.FirstMatch) : args.FirstMatch;
-
-                        ProcessStartInfo startInfo = new(editor.Path)
-                        {
-                            UseShellExecute = false,
-                            CreateNoWindow = true,
-                            Arguments = editor.Args.Replace("%file", UiUtils.Quote(filePath), StringComparison.Ordinal)
-                                .Replace("%page", pageNumber.ToString(), StringComparison.Ordinal)
-                                .Replace("%line", args.LineNumber.ToString(), StringComparison.Ordinal)
-                                .Replace("%pattern", args.Pattern, StringComparison.Ordinal)
-                                .Replace("%match", matchValue, StringComparison.Ordinal)
-                                .Replace("%column", args.ColumnNumber.ToString(), StringComparison.Ordinal),
-                        };
-                        try
-                        {
-                            using var proc = Process.Start(startInfo);
-                        }
-                        catch (Win32Exception ex)
-                        {
-                            if (ex.NativeErrorCode == ErrorRequiresElevation)
-                            {
-                                startInfo.Verb = "runas";
-                                startInfo.UseShellExecute = true;
-
-                                using var proc = Process.Start(startInfo);
-                            }
-                            else
-                            {
-                                throw;
-                            }
-                        }
+                        using var proc = Process.Start(startInfo);
+                        return true;
                     }
+                }
+                catch
+                {
+                    // Fall through to return false
+                }
+            }
+
+            return false;
+        }
+
+        private static void OpenFileInNotepad(string filePath)
+        {
+            ProcessStartInfo startInfo = new("notepad.exe")
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                Arguments = filePath
+            };
+            try
+            {
+                using var proc = Process.Start(startInfo);
+            }
+            catch (Win32Exception ex)
+            {
+                if (ex.NativeErrorCode == ErrorRequiresElevation)
+                {
+                    startInfo.Verb = "runas";
+                    startInfo.UseShellExecute = true;
+
+                    using var proc = Process.Start(startInfo);
+                }
+                else
+                {
+                    throw;
                 }
             }
         }
