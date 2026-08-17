@@ -4032,16 +4032,16 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>문자열 맵 적용</value>
   </data>
   <data name="PasswordDialog_OK" xml:space="preserve">
-    <value>OK</value>
+    <value>확인</value>
   </data>
   <data name="PasswordDialog_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="Main_ViewWhitespace" xml:space="preserve">
     <value>공백 보기</value>
   </data>
   <data name="StringMap_MoveToTop" xml:space="preserve">
-    <value>위로 이동</value>
+    <value>맨 위로 이동</value>
   </data>
   <data name="StringMap_MoveUp" xml:space="preserve">
     <value>위로 이동</value>
@@ -4062,7 +4062,7 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>대소문자 일치</value>
   </data>
   <data name="Options_MatchWholeWords" xml:space="preserve">
-    <value>Match whole words</value>
+    <value>전체 단어 일치</value>
   </data>
   <data name="Options_RequestPDFPassword" xml:space="preserve">
     <value>보안 PDF 파일에 대한 비밀번호 요청</value>
@@ -4104,12 +4104,66 @@ dnGrep "C:\Program Files\dnGrep" t\w*t</value>
     <value>읽기 전용</value>
   </data>
   <data name="Main_ResultsHeader_Type" xml:space="preserve">
-    <value>Type</value>
+    <value>유형</value>
   </data>
   <data name="Main_ResultsHeader_Matches" xml:space="preserve">
     <value>일치</value>
   </data>
   <data name="MessageBox_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>제거</value>
+  </data>
+  <data name="Main_ResultsHeader_Info" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="Main_ResultsHeader_Path" xml:space="preserve">
+    <value>경로</value>
+  </data>
+  <data name="Main_ResultsHeader_Size" xml:space="preserve">
+    <value>크기</value>
+  </data>
+  <data name="Main_ResultsHeader_DateModified" xml:space="preserve">
+    <value>수정 날짜</value>
+  </data>
+  <data name="Options_EverythingInstanceName" xml:space="preserve">
+    <value>Everything 인스턴스 이름</value>
+  </data>
+  <data name="Options_EnableDetailsViewInResultsTree" xml:space="preserve">
+    <value>결과 트리에서 상세 보기 사용함</value>
+  </data>
+  <data name="Main_Results_SizeAllColumnsToFit" xml:space="preserve">
+    <value>모든 열의 크기 맞추기</value>
+  </data>
+  <data name="About_BuildToolsForWindowsInstallerPackages" xml:space="preserve">
+    <value>Windows Installer 패키지를 위한 빌드 도구</value>
+  </data>
+  <data name="Main_SearchType_Fuzzy" xml:space="preserve">
+    <value>퍼지</value>
+  </data>
+  <data name="Main_SearchType_ApproximateStringMatching" xml:space="preserve">
+    <value>근사 문자열 일치</value>
+  </data>
+  <data name="Options_FuzzySearch" xml:space="preserve">
+    <value>퍼지 검색</value>
+  </data>
+  <data name="BookmarkDetails_SearchType_Fuzzy" xml:space="preserve">
+    <value>퍼지</value>
+  </data>
+  <data name="BookmarkDetails_SearchType_ApproximateStringMatching" xml:space="preserve">
+    <value>근사 문자열 일치</value>
+  </data>
+  <data name="Test_SearchType_Fuzzy" xml:space="preserve">
+    <value>퍼지</value>
+  </data>
+  <data name="Main_SortMenu_ErrorMessage" xml:space="preserve">
+    <value>오류 메시지</value>
+  </data>
+  <data name="Options_ConfirmWhenRemovingItemsFromHistoryLists" xml:space="preserve">
+    <value>기록 목록에서 항목을 삭제할 때 확인</value>
+  </data>
+  <data name="MessageBox_DoNotAskMeAgainWhenRemovingRecentItems" xml:space="preserve">
+    <value>최근 항목을 삭제할 때 다시 묻지 않기</value>
+  </data>
+  <data name="MessageBox_RemoveItem0FromThisList" xml:space="preserve">
+    <value>이 목록에서 "{0}" 항목을 제거하시겠습니까?</value>
   </data>
 </root>
