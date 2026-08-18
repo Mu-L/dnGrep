@@ -184,7 +184,7 @@
     <value>/sc [scriptKey]
 -sc [scriptKey]
 -script [scriptKey]
-    Exécute le script identifié par la clé de script.</value>
+    Exécute le script spécifié par la clé de script.</value>
     <comment>Help dialog text when running dnGrep from the command-line</comment>
   </data>
   <data name="Help_CmdLineSearchForVerbatim" xml:space="preserve">
