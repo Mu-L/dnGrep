@@ -181,10 +181,10 @@
     <comment>Help dialog text when running dnGrep from the command-line</comment>
   </data>
   <data name="Help_CmdLineScript" xml:space="preserve">
-    <value>/sc [cléScript]
--sc [cléScript]
--script [cléScript]
-    Exécute le script dont la clé est spécifiée.</value>
+    <value>/sc [scriptKey]
+-sc [scriptKey]
+-script [scriptKey]
+    Exécute le script identifié par la clé de script.</value>
     <comment>Help dialog text when running dnGrep from the command-line</comment>
   </data>
   <data name="Help_CmdLineSearchForVerbatim" xml:space="preserve">
